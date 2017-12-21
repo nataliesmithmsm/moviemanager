@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class MovieListTest {
 
@@ -32,6 +33,15 @@ public class MovieListTest {
 
         //Assert
         assertEquals("Home Alone,Lion King,Star Wars", movieList.getAllMovies());
+    }
+
+    @Test
+    public void testIfNotAddingAMovieReturnsEmptyMovieList() throws Exception {
+        //Arrange
+        MovieList movieList = new MovieList();
+
+        //Assert
+        assertEquals("", movieList.getAllMovies());
     }
 }
 
