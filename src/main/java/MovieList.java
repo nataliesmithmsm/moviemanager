@@ -21,4 +21,12 @@ public class MovieList {
         }
         return movieList;
     }
+
+    public int getSizeOfMovieList() {
+        return movies.size();
+    }
+
+    public boolean contains(Movie search) {
+           return movies.contains(search);
+   }
 }
