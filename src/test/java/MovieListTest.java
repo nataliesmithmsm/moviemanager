@@ -5,79 +5,33 @@ import static org.junit.Assert.assertEquals;
 public class MovieListTest {
 
     @Test
-    public void emptyMovieListHasASizeOfZero() throws Exception {
-
-        // Arrange
+    public void testAddingAMovieObject() {
+        //Arrange
         MovieList movieList = new MovieList();
+        //Act
+        Movie movie = new Movie("Home Alone");
+        movieList.addMovie(movie);
 
-        // Act
-
-        // Assert
-        assertEquals(0, movieList.size());
+        //Assert
+        assertEquals("Home Alone", movieList.getAllMovies());
     }
 
     @Test
-    public void testTheSizeAfterAddingOneMovie() throws Exception {
-        // Arrange
-        MovieList oneItemMovieList = new MovieList();
-
-        // Act
-        oneItemMovieList.add(1);
-
-        // Assert
-        assertEquals(1, oneItemMovieList.size());
-    }
-
-    @Test
-    public void testTheSizeAfterAddingTwoMovies() throws Exception {
-
-        // Arrange
-        MovieList twoMovieList = new MovieList();
-
-        // Act
-        twoMovieList.add(2);
-
-        // Assert
-        assertEquals(2, twoMovieList.size());
-    }
-
-    @Test
-    public void testTheSizeAfterAdding10Movies() throws Exception {
-
-        // Arrange
-        MovieList twoMovieList = new MovieList();
-
-        // Act
-        twoMovieList.add(10);
-
-        // Assert
-        assertEquals(10, twoMovieList.size());
-    }
-
-    @Test
-    public void testAddingAMovieWithAString() throws Exception {
+    public void testAddingMultipleMoviesAtOnce() {
         //Arrange
         MovieList movieList = new MovieList();
 
         //Act
-        movieList.addMovie("Star Wars");
-        //Assert
-        assertEquals("Star Wars", movieList.getAllMovies());
-    }
+        Movie movie = new Movie("Home Alone");
+        Movie movie2 = new Movie("Lion King");
+        Movie movie3 = new Movie("Star Wars");
 
-
-    @Test
-    public void testAddingMultipleMoviesOneAtATime() throws Exception {
-        //Arrange
-        MovieList movieList = new MovieList();
-
-        //Act
-        movieList.addMovie("Star Wars");
-        movieList.addMovie("Harry Potter");
-        movieList.addMovie("Lord of the rings");
+        movieList.addMovie(movie);
+        movieList.addMovie(movie2);
+        movieList.addMovie(movie3);
 
         //Assert
-        assertEquals("Star Wars,Harry Potter,Lord of the rings", movieList.getAllMovies());
+        assertEquals("Home Alone,Lion King,Star Wars", movieList.getAllMovies());
     }
 }
 

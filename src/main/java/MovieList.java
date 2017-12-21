@@ -3,16 +3,10 @@ import java.util.List;
 
 public class MovieList {
 
-    private int size = 0;
-    List<String> movies = new ArrayList<>();
+    List<Movie> movies = new ArrayList<>();
 
-
-    public int size() {
-        return size;
-    }
-
-    public void add(int i) {
-        size = i;
+    public void addMovie(Movie movie) {
+        movies.add(movie);
     }
 
     public String getAllMovies() {
@@ -21,13 +15,10 @@ public class MovieList {
 
     private String commaDelimitedStringfromMovieList() {
         String movieList = "";
-        for (String film : movies) {
-            movieList += film + ",";
+        for (Movie film : movies) {
+
+            movieList += film.getName() + ",";
         }
         return movieList;
-    }
-
-    public void addMovie(String movie) {
-        movies.add(movie);
     }
 }
