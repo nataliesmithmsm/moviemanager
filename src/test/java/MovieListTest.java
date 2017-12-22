@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 public class MovieListTest {
 
+
     @Test
     public void testAddingAMovieObject() {
         //Arrange
@@ -45,9 +46,10 @@ public class MovieListTest {
 
     @Test
     public void testSizeOfMovieList() throws Exception {
-
+        //Arrange
         MovieList movieList = new MovieList();
 
+        //Act
         Movie movie = new Movie("Home Alone");
         Movie movie2 = new Movie("Lion King");
         Movie movie3 = new Movie("Star Wars");
@@ -56,13 +58,16 @@ public class MovieListTest {
         movieList.addMovie(movie2);
         movieList.addMovie(movie3);
 
+        //Assert
         assertEquals(3, movieList.getSizeOfMovieList());
     }
 
     @Test
     public void testSearchingForMovieInList() throws Exception {
+        //Arrange
         MovieList movieList = new MovieList();
 
+        //Act
         Movie movie = new Movie("Home Alone");
         Movie movie2 = new Movie("Lion King");
         Movie movie3 = new Movie("Star Wars");
@@ -71,14 +76,17 @@ public class MovieListTest {
         movieList.addMovie(movie2);
         movieList.addMovie(movie3);
 
+        //Assert
         assertEquals(true, movieList.contains(movie2));
         assertTrue(movieList.contains(movie2));
     }
 
     @Test
     public void testSearchingForNoneMatchingMovieInList() throws Exception {
+        //Arrange
         MovieList movieList = new MovieList();
 
+        //Act
         Movie movie = new Movie("Home Alone");
         Movie movie2 = new Movie("Lion King");
         Movie movie3 = new Movie("Star Wars");
@@ -86,7 +94,7 @@ public class MovieListTest {
         movieList.addMovie(movie);
         movieList.addMovie(movie2);
 
-
+        //Assert
         assertEquals(false, movieList.contains(movie3));
         assertFalse(movieList.contains(movie3));
     }

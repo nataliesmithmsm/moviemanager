@@ -1,15 +1,22 @@
-import javax.naming.Name;
-
 public class Movie {
-
-    String Name;
+     String name;
 
     public Movie(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
+    public void renameMovie(String updatedName) {
+        name = updatedName;
+    }
+
+    public void throwIllegalArgumentExpetion() {
+        if (getName() == null)
+        {
+            throw new IllegalArgumentException("value can not be null");
+        }
+    }
 }

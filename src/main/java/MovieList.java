@@ -26,7 +26,7 @@ public class MovieList {
         return movies.size();
     }
 
-    public boolean contains(Movie search) {
-           return movies.contains(search);
+    public boolean contains(Movie movieToCheckFor) {
+           return movies.contains(movieToCheckFor);
    }
 }
